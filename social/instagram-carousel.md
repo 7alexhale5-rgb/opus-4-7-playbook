@@ -12,7 +12,7 @@ Built to stop-the-scroll for engineers. Each slide: one idea, high-contrast, sca
 - Leave a 120 px safe zone at bottom for IG's CTA overlays.
 
 **Author byline on every slide**
-Small mono footer, bottom-left: `@{{IG_HANDLE}} · opus 4.7 playbook`.
+Small mono footer, bottom-left: `@realalexhale · opus 4.7 playbook`.
 
 **Swipe indicator**
 Small ">>" in the bottom-right corner of slides 1–9. Slide 10 shows the CTA instead.
@@ -204,7 +204,7 @@ low    ← latency-sensitive
 > Star it. Clone it. Use it.
 
 **Below the URL, small:**
-> Follow **@{{IG_HANDLE}}** — daily engineering notes from building with Claude.
+> Follow **@realalexhale** — daily engineering notes from building with Claude.
 
 **Bottom corner:** small PrettyFly wordmark.
 

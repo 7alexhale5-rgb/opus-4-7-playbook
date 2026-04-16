@@ -15,6 +15,8 @@ def main() -> int:
     for md in ROOT.rglob("*.md"):
         if ".git" in md.parts:
             continue
+        if "node_modules" in md.parts:
+            continue
         text = md.read_text(encoding="utf-8", errors="ignore")
         for match in LINK_RE.finditer(text):
             target = match.group(1).split("#", 1)[0]

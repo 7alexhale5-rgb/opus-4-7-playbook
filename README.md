@@ -68,7 +68,7 @@ If you don't run Claude Code, the docs are still the fastest migration reference
 | [`templates/`](templates/) | Copy-paste config for Claude Code: operating notes, CARL domain, global + project CLAUDE.md snippets, agent-pinning reference |
 | [`examples/`](examples/) | Runnable Python — minimal call, agentic loop, task-budget wrapper, full-resolution vision |
 | [`migration/`](migration/) | Shell scripts — pin agent model IDs, scan a repo for deprecated params, interactive installer |
-| [`social/`](social/) | Instagram carousel, Twitter thread, LinkedIn post — use as-is or adapt |
+| [`social/`](social/) | Instagram carousel (Markdown + [`social/export/`](social/export/) PNGs), Twitter thread, LinkedIn post |
 | [`tests/`](tests/) | CI-enforced sanitization, code-syntax, and link checks |
 
 ## Who this is for

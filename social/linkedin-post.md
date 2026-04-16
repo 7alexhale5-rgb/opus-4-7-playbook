@@ -1,8 +1,6 @@
 # LinkedIn Post
 
-Long-form, engineering-leader angle. Less "hey look" energy than Twitter, more "here's what I changed and why."
-
-Replace the first-person voice ("I") if posting under a different handle. Replace `{{IG_HANDLE}}` if cross-linking.
+Long-form, engineering-leader angle. Less "hey look" energy than Twitter, more "here's what I changed and why." First-person voice assumes Alex Hale is posting — rewrite in third person if posting as PrettyFly.
 
 ---
 

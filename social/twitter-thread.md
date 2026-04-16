@@ -1,8 +1,6 @@
 # Twitter / X Thread — 10 tweets
 
-Mirrors the IG carousel. Same arc, punchier for Twitter.
-
-Replace `{{IG_HANDLE}}` or remove the line. Replace the first-person voice ("I") if you're not posting under your own handle.
+Mirrors the IG carousel. Same arc, punchier for Twitter. Posts in first person — rewrite if someone other than @realalexhale is posting.
 
 ---
 
