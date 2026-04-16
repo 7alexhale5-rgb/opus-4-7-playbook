@@ -77,6 +77,14 @@ If you don't run Claude Code, the docs are still the fastest migration reference
 - Claude Code users who want their subagents and skills aligned to the new model's strengths
 - Agents / builders who want a spec-complete reference instead of reading five docs pages to find one API shape
 
+## Looking for the full env?
+
+This repo is the focused migration kit. For the complete Claude Code setup it's extracted from — agents, CARL policy engine, 20 lifecycle hooks, 78-skill catalog, MCP server list, drop-in installer — see the umbrella repo:
+
+**[gravity-stack](https://github.com/7alexhale5-rgb/gravity-stack)** — top 1% AI-native development environment.
+
+Both repos are MIT. Both pass sanitization in CI. Use one, the other, or both.
+
 ## Sources
 
 Every factual claim in the docs cites Anthropic's primary sources:
