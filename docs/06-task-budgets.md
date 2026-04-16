@@ -55,6 +55,16 @@ budget = max(20_000, int(p99_tokens * 1.2))  # 114,000 here
 
 If you don't have historical data, run a week without budgets first, collect p99, then turn them on.
 
+## Compatibility — direct SDK only
+
+Task-budgets require passing the `task-budgets-2026-03-13` beta header through to the raw Anthropic Messages API. Proxy / abstraction layers (LiteLLM, Portkey, OpenRouter, AWS Bedrock converters) typically do **not** forward arbitrary `betas=[…]` headers today. If your call site goes through a proxy, one of:
+
+- Call the Anthropic SDK directly for the budgeted path only
+- Wait for your proxy to add `task_budget` pass-through support
+- File a feature request on your proxy of choice
+
+You'll know it doesn't work because the server ignores the budget — responses won't carry `usage.task_budget` metadata and the loop won't pause.
+
 ## Wrapper pattern
 
 See `examples/budgeted_wrapper.py` for a thin wrapper that:
@@ -64,6 +74,8 @@ See `examples/budgeted_wrapper.py` for a thin wrapper that:
 3. Makes the feature toggleable via an environment variable (kill switch)
 
 The kill switch matters. A failing budget can silently degrade quality; you want one-flag disable without a redeploy.
+
+For a packaged drop-in (MIT, tests, resume-loop support), see the companion library at `~/Projects/shared-libs/anthropic-budgeted/` (`pip install anthropic-budgeted` once published).
 
 ## What task budgets do not do
 

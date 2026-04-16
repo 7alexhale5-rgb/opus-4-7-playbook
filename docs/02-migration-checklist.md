@@ -51,6 +51,23 @@ Work from top to bottom. Every item maps to a concrete edit.
 - [ ] For production: 24h observation on logs (error rates, cost per task) before declaring the migration done
 - [ ] If cost per task moves >1.3× at equivalent workload, investigate tokenizer impact before retuning prompts
 
+## If you use LiteLLM (or another proxy / abstraction layer)
+
+Grep first — the migration surface is very different:
+
+```
+rg -l "LiteLlm|litellm|openrouter|portkey" --type py --type js --type ts
+```
+
+If your call sites go through LiteLLM, Portkey, OpenRouter, etc., the checklist collapses to:
+
+- [ ] Swap model IDs only (`anthropic/claude-opus-4-6` → `anthropic/claude-opus-4-7`, etc.)
+- [ ] The "no `temperature` / `top_p` / `top_k`" rule does **not** apply — the proxy layer handles parameter translation and filters unsupported fields, so your existing calls keep working.
+- [ ] Adaptive-thinking, prefill, and tokenizer headroom rules are all handled behind the proxy's adapter.
+- [ ] **Task-budgets (`06-task-budgets.md`) currently will not work through LiteLLM** — the beta header `task-budgets-2026-03-13` isn't proxied to the upstream Messages API. If you need budgets, call the Anthropic SDK directly for that path (see `anthropic-budgeted` or `examples/budgeted_wrapper.py`) or wait for proxy support.
+
+The "breaking param" audit in this checklist targets direct SDK callers. Skip it for proxy-mediated call sites.
+
 ## Shortcut (Claude Code)
 
 ```
